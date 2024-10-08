@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+<title>Login</title>
+</head>
+<body>
+<style>
+ body{background-color: lime;}
+</style>
+</body>
+<center>
+<table>
+<a onclick = "var randnum = Math.floor(Math.random() * 10000); localStorage.setItem('pass', randnum); document.getElementById('create').setAttribute('href', 'mailto:28lanterjoseph@hcud3schools.org?subject='+localStorage.getItem('pass')*3+ ' User Request for Account' alert('In order to get a new account, you need to email this number here. Then the site owner (me) will decode it and email you back your username and password. To get your password, hit ok and then send the email that will appear.'));"  id = "create" style = "text-decoration: none;" href = "">Create New Account (This will reset your password if you already have one)</a>
+<p style = "color: darkgreen;">Username: <input id = "boxOne" type = "text"/></p>
+<p style = "color: darkgreen;">Password: <input id = "boxTwo" type = "password"/></p>
+<button onclick = "return checkpass();">Sign In</button>
+<script>
+document.getElementById('create').setAttribute('href', 'mailto:28lanterjoseph@hcud3schools.org?subject='+localStorage.getItem('pass')*8+ ' User Request for Account'); 
+function checkpass() {
+ var pass = document.getElementById("boxOne");
+ var passread = pass.value;
+ var passTwo = document.getElementById("boxTwo");
+ var passreadTwo = passTwo.value;
+ if (passreadTwo == localStorage.getItem("pass")) {
+    var newwin = window.open("", "embed", "width = 1800, height = 1000");
+    newwin.document.write("<center><embed src = 'https://qwertycodinglearn.w3spaces.com/signedon.html' style = 'border: 10px darkgreen solid; width: 100vw; height: 100vh;' width = '800' height = '1000'/></center>")
+    return true;
+ }
+ return false;
+}
+</script>
+</table>
+</center>
